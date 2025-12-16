@@ -18,3 +18,4 @@
 - Stabilize VLM inference
 - Generate textual description from frames
 - Integrate with person detection module
+- Generate textual description from a single video frame using VLM
