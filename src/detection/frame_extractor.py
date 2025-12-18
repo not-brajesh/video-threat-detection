@@ -1,36 +1,42 @@
 import cv2
 import os
 
-video_path = "data/videos/sample.mp4"
-output_dir = "data/frames"
+def extract_frames(
+    video_path,
+    output_dir="DATA/frames",
+    every_n_frames=30
+):
+    os.makedirs(output_dir, exist_ok=True)
 
-os.makedirs(output_dir, exist_ok=True)
+    cap = cv2.VideoCapture(video_path)
+    frame_count = 0
+    saved_count = 0
 
-cap = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise RuntimeError("❌ Video open nahi ho raha")
 
-if not cap.isOpened():
-    print("Video open nahi ho rahi")
-    exit()
+    print("Video opened successfully")
 
-print("Video opened successfully")
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-frame_count = 0
-saved_count = 0
+        if frame_count % every_n_frames == 0:
+            frame_path = os.path.join(
+                output_dir,
+                f"frame_{saved_count}.jpg"
+            )
+            cv2.imwrite(frame_path, frame)
+            saved_count += 1
 
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        print("Video khatam ho gaya")
-        break
+        frame_count += 1
 
-    frame_count += 1
+    cap.release()
+    print(f"Total frames saved: {saved_count}")
 
-    # har 10th frame save karo
-    if frame_count % 10 == 0:
-        frame_name = f"frame_{saved_count}.jpg"
-        frame_path = os.path.join(output_dir, frame_name)
-        cv2.imwrite(frame_path, frame)
-        saved_count += 1
-
-cap.release()
-print(f"Total frames saved: {saved_count}")
+    return [
+        os.path.join(output_dir, f)
+        for f in sorted(os.listdir(output_dir))
+        if f.endswith(".jpg")
+    ]
