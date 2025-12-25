@@ -1,67 +1,163 @@
 import json
+import base64
+import requests
+import re
+import time
 from PIL import Image
 
-# import bbox utility
 from bbox_utils import normalized_to_pixel_bbox
 
 
-def vlm_stub_detect(image_path: str):
+# =========================
+# Ollama config
+# =========================
+OLLAMA_URL = "http://localhost:11434/api/generate"
+MODEL_NAME = "llava:7b"
+TIMEOUT = 240          # safer for LLaVA
+MAX_RETRIES = 2        # retry on timeout
+
+
+# =========================
+# Prompt (STRICT + STABLE)
+# =========================
+PROMPT = """
+You are an object detection system.
+
+Detect ALL persons visible in the image.
+
+Return STRICT JSON ARRAY ONLY.
+No explanation.
+No markdown.
+No extra text.
+
+Format:
+[
+  {
+    "label": "person",
+    "x_min": 0.0,
+    "y_min": 0.0,
+    "x_max": 1.0,
+    "y_max": 1.0
+  }
+]
+
+Rules:
+- Coordinates MUST be normalized between 0 and 1
+- If no person exists, return []
+"""
+
+
+# =========================
+# Utils
+# =========================
+def image_to_base64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
+
+def extract_json(text):
     """
-    Week-1 SAFE VLM Stub Detector
-    - NO real Florence inference
-    - Outputs FINAL JSON with PIXEL bounding boxes
+    Safely extract JSON array from LLaVA output
     """
+    if not text:
+        return []
 
-    # load image
-    image = Image.open(image_path).convert("RGB")
-    image_width, image_height = image.size
+    match = re.search(r"\[\s*(?:\{.*?\}\s*,?\s*)*\]", text, re.DOTALL)
+    if not match:
+        return []
 
-    # -----------------------------
-    # STUB normalized bbox (fake VLM output)
-    # -----------------------------
-    bbox_norm = {
-        "x_min": 0.1,
-        "y_min": 0.1,
-        "x_max": 0.4,
-        "y_max": 0.8
-    }
+    try:
+        data = json.loads(match.group())
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
 
-    # convert normalized → pixel bbox
-    bbox_pixel = normalized_to_pixel_bbox(
-        bbox_norm,
-        image_width,
-        image_height
+
+def deduplicate_boxes(boxes, tol=20):
+    """
+    Remove near-duplicate boxes (pixel space)
+    """
+    unique = []
+    for b in boxes:
+        if not any(
+            abs(b["x_min"] - u["x_min"]) < tol and
+            abs(b["y_min"] - u["y_min"]) < tol and
+            abs(b["x_max"] - u["x_max"]) < tol and
+            abs(b["y_max"] - u["y_max"]) < tol
+            for u in unique
+        ):
+            unique.append(b)
+    return unique
+
+
+def is_valid_box(b):
+    """
+    Reject garbage full-frame boxes
+    """
+    return not (
+        b["x_min"] == 0 and b["y_min"] == 0 and
+        b["x_max"] == 1 and b["y_max"] == 1
     )
 
-    # detected objects
-    objects = [
-        {
-            "label": "person",
-            "confidence": 0.92,
-            "bbox_pixel": bbox_pixel
-        }
-    ]
 
-    # final JSON output
-    output = {
-        "image": image_path,
-        "image_size": {
-            "width": image_width,
-            "height": image_height
-        },
-        "objects": objects
+# =========================
+# Detector
+# =========================
+def llava_detect(image_path):
+    image = Image.open(image_path).convert("RGB")
+    w, h = image.size
+
+    payload = {
+        "model": MODEL_NAME,
+        "prompt": PROMPT,
+        "images": [image_to_base64(image_path)],
+        "stream": False
     }
 
-    return output
+    raw_text = ""
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            r = requests.post(
+                OLLAMA_URL,
+                json=payload,
+                timeout=TIMEOUT
+            )
+            response = r.json()
+            raw_text = response.get("response", "")
+            break
+        except Exception as e:
+            print(f"⚠️ Ollama attempt {attempt} failed:", e)
+            time.sleep(2)
+
+    if not raw_text:
+        return {"image": image_path, "detections": []}
+
+    print("\n===== RAW MODEL OUTPUT =====")
+    print(raw_text)
+    print("============================\n")
+
+    boxes = extract_json(raw_text)
+
+    pixel_boxes = []
+    for b in boxes:
+        if isinstance(b, dict) and is_valid_box(b):
+            pixel_boxes.append(
+                normalized_to_pixel_bbox(b, w, h)
+            )
+
+    pixel_boxes = deduplicate_boxes(pixel_boxes)
+
+    return {
+        "image": image_path,
+        "detections": pixel_boxes
+    }
 
 
-# -----------------------------
-# RUN TEST
-# -----------------------------
+# =========================
+# Test run
+# =========================
 if __name__ == "__main__":
-    image_path = "DATA/frames/frame_0.jpg"
-
-    result = vlm_stub_detect(image_path)
-
-    print("VLM inference output (FINAL - Week 1):")
-    print(json.dumps(result, indent=4))
+    test_image = "DATA/frames/frame_0.jpg"
+    result = llava_detect(test_image)
+    print(json.dumps(result, indent=2))

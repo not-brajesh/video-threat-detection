@@ -3,7 +3,7 @@ import os
 
 # local imports
 from frame_extractor import extract_frames
-from vlm_detector import vlm_stub_detect
+from vlm_detector import llava_detect
 
 VIDEO_PATH = "DATA/videos/sample.mp4"
 OUTPUT_JSON = "DATA/output_detections.json"
@@ -25,7 +25,7 @@ def run_video_pipeline(video_path):
     all_detections = []
 
     for frame_path in frames:
-        result = vlm_stub_detect(frame_path)
+        result = llava_detect(frame_path)
         all_detections.append(result)
 
     return all_detections

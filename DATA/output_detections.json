@@ -1,438 +1,266 @@
 [
     {
         "image": "DATA/frames/frame_0.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 313,
+                "y_min": 469,
+                "x_max": 497,
+                "y_max": 630
+            },
+            {
+                "x_min": 527,
+                "y_min": 468,
+                "x_max": 715,
+                "y_max": 638
+            },
+            {
+                "x_min": 806,
+                "y_min": 470,
+                "x_max": 971,
+                "y_max": 634
             }
         ]
     },
     {
         "image": "DATA/frames/frame_1.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_10.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 689,
+                "y_min": 495,
+                "x_max": 949,
+                "y_max": 586
             }
         ]
     },
     {
         "image": "DATA/frames/frame_11.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_12.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_13.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 727,
+                "y_min": 570,
+                "x_max": 1280,
+                "y_max": 720
             }
         ]
     },
     {
         "image": "DATA/frames/frame_14.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 893,
+                "y_min": 543,
+                "x_max": 1140,
+                "y_max": 671
+            },
+            {
+                "x_min": 596,
+                "y_min": 543,
+                "x_max": 788,
+                "y_max": 671
             }
         ]
     },
     {
         "image": "DATA/frames/frame_15.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 874,
+                "y_min": 568,
+                "x_max": 1090,
+                "y_max": 636
             }
         ]
     },
     {
         "image": "DATA/frames/frame_16.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_17.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 0,
+                "y_min": 387,
+                "x_max": 803,
+                "y_max": 569
             }
         ]
     },
     {
         "image": "DATA/frames/frame_18.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 504,
+                "y_min": 450,
+                "x_max": 999,
+                "y_max": 615
+            },
+            {
+                "x_min": 629,
+                "y_min": 458,
+                "x_max": 832,
+                "y_max": 627
+            },
+            {
+                "x_min": 803,
+                "y_min": 463,
+                "x_max": 1016,
+                "y_max": 621
             }
         ]
     },
     {
         "image": "DATA/frames/frame_19.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 797,
+                "y_min": 353,
+                "x_max": 981,
+                "y_max": 583
+            },
+            {
+                "x_min": 682,
+                "y_min": 356,
+                "x_max": 834,
+                "y_max": 561
+            },
+            {
+                "x_min": 487,
+                "y_min": 356,
+                "x_max": 675,
+                "y_max": 560
             }
         ]
     },
     {
         "image": "DATA/frames/frame_2.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_20.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 311,
+                "y_min": 502,
+                "x_max": 938,
+                "y_max": 627
+            },
+            {
+                "x_min": 604,
+                "y_min": 502,
+                "x_max": 784,
+                "y_max": 627
             }
         ]
     },
     {
         "image": "DATA/frames/frame_21.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
-            {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_22.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 700,
+                "y_min": 496,
+                "x_max": 925,
+                "y_max": 605
             }
         ]
     },
     {
         "image": "DATA/frames/frame_3.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 299,
+                "y_min": 510,
+                "x_max": 919,
+                "y_max": 621
             }
         ]
     },
     {
         "image": "DATA/frames/frame_4.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 979,
+                "y_min": 603,
+                "x_max": 1182,
+                "y_max": 671
             }
         ]
     },
     {
         "image": "DATA/frames/frame_5.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 488,
+                "y_min": 499,
+                "x_max": 732,
+                "y_max": 625
             }
         ]
     },
     {
         "image": "DATA/frames/frame_6.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 480,
+                "y_min": 202,
+                "x_max": 762,
+                "y_max": 538
             }
         ]
     },
     {
         "image": "DATA/frames/frame_7.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 618,
+                "y_min": 474,
+                "x_max": 820,
+                "y_max": 595
+            },
+            {
+                "x_min": 509,
+                "y_min": 540,
+                "x_max": 718,
+                "y_max": 663
             }
         ]
     },
     {
         "image": "DATA/frames/frame_8.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 545,
+                "y_min": 412,
+                "x_max": 1059,
+                "y_max": 661
             }
         ]
     },
     {
         "image": "DATA/frames/frame_9.jpg",
-        "image_size": {
-            "width": 1280,
-            "height": 720
-        },
-        "objects": [
+        "detections": [
             {
-                "label": "person",
-                "confidence": 0.92,
-                "bbox_pixel": {
-                    "x_min": 128,
-                    "y_min": 72,
-                    "x_max": 512,
-                    "y_max": 576
-                }
+                "x_min": 747,
+                "y_min": 193,
+                "x_max": 944,
+                "y_max": 664
             }
         ]
     }
