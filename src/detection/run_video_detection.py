@@ -1,5 +1,6 @@
 import json
 import os
+from tracker import SimpleTracker
 
 # local imports
 from frame_extractor import extract_frames
@@ -11,36 +12,48 @@ OUTPUT_JSON = "DATA/output_detections.json"
 
 def run_video_pipeline(video_path):
     """
-    Runs full Phase-1 pipeline:
-    Video -> Frames -> Stub Detection -> JSON
+    Phase 2 pipeline:
+    Video -> Frames -> Detection -> Tracking -> JSON
     """
 
-    # extract frames from video
     frames = extract_frames(
         video_path,
         output_dir="DATA/frames",
-        every_n_frames=30
+        every_n_frames=60
     )
 
-    all_detections = []
+    # 🔒 Tracker initialized ONCE (very important)
+    tracker = SimpleTracker(iou_threshold=0.4)
+
+    all_results = []
 
     for frame_path in frames:
         result = llava_detect(frame_path)
-        all_detections.append(result)
 
-    return all_detections
+        detections = result.get("detections", [])
+
+        # 🧠 Apply tracking only if detections exist
+        if detections:
+            tracked_boxes = tracker.update(detections)
+        else:
+            tracked_boxes = []
+
+        all_results.append({
+            "image": frame_path,
+            "detections": tracked_boxes
+        })
+
+    return all_results
 
 
 if __name__ == "__main__":
 
-    # ensure DATA folder exists
     os.makedirs("DATA", exist_ok=True)
 
-    detections = run_video_pipeline(VIDEO_PATH)
+    results = run_video_pipeline(VIDEO_PATH)
 
-    # save final JSON
     with open(OUTPUT_JSON, "w") as f:
-        json.dump(detections, f, indent=4)
+        json.dump(results, f, indent=4)
 
-    print("✅ Phase 1 complete. Detection JSON saved.")
+    print("✅ Phase 2 complete. Detection + Tracking JSON saved.")
     print(f"📄 Output file: {OUTPUT_JSON}")

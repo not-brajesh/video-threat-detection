@@ -13,12 +13,12 @@ from bbox_utils import normalized_to_pixel_bbox
 # =========================
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "llava:7b"
-TIMEOUT = 240          # safer for LLaVA
-MAX_RETRIES = 2        # retry on timeout
+TIMEOUT = 240
+MAX_RETRIES = 2
 
 
 # =========================
-# Prompt (STRICT + STABLE)
+# Prompt
 # =========================
 PROMPT = """
 You are an object detection system.
@@ -56,9 +56,6 @@ def image_to_base64(path):
 
 
 def extract_json(text):
-    """
-    Safely extract JSON array from LLaVA output
-    """
     if not text:
         return []
 
@@ -73,10 +70,26 @@ def extract_json(text):
         return []
 
 
+def clamp(v):
+    return max(0.0, min(1.0, float(v)))
+
+
+def is_valid_box(b):
+    required = {"x_min", "y_min", "x_max", "y_max"}
+    if not required.issubset(b.keys()):
+        return False
+
+    # full-frame garbage
+    if (
+        b["x_min"] == 0 and b["y_min"] == 0 and
+        b["x_max"] == 1 and b["y_max"] == 1
+    ):
+        return False
+
+    return True
+
+
 def deduplicate_boxes(boxes, tol=20):
-    """
-    Remove near-duplicate boxes (pixel space)
-    """
     unique = []
     for b in boxes:
         if not any(
@@ -88,16 +101,6 @@ def deduplicate_boxes(boxes, tol=20):
         ):
             unique.append(b)
     return unique
-
-
-def is_valid_box(b):
-    """
-    Reject garbage full-frame boxes
-    """
-    return not (
-        b["x_min"] == 0 and b["y_min"] == 0 and
-        b["x_max"] == 1 and b["y_max"] == 1
-    )
 
 
 # =========================
@@ -123,8 +126,7 @@ def llava_detect(image_path):
                 json=payload,
                 timeout=TIMEOUT
             )
-            response = r.json()
-            raw_text = response.get("response", "")
+            raw_text = r.json().get("response", "")
             break
         except Exception as e:
             print(f"⚠️ Ollama attempt {attempt} failed:", e)
@@ -142,6 +144,12 @@ def llava_detect(image_path):
     pixel_boxes = []
     for b in boxes:
         if isinstance(b, dict) and is_valid_box(b):
+            # clamp safety
+            b["x_min"] = clamp(b["x_min"])
+            b["y_min"] = clamp(b["y_min"])
+            b["x_max"] = clamp(b["x_max"])
+            b["y_max"] = clamp(b["y_max"])
+
             pixel_boxes.append(
                 normalized_to_pixel_bbox(b, w, h)
             )
@@ -155,7 +163,7 @@ def llava_detect(image_path):
 
 
 # =========================
-# Test run
+# Test
 # =========================
 if __name__ == "__main__":
     test_image = "DATA/frames/frame_0.jpg"

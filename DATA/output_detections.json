@@ -3,39 +3,50 @@
         "image": "DATA/frames/frame_0.jpg",
         "detections": [
             {
-                "x_min": 313,
-                "y_min": 469,
-                "x_max": 497,
-                "y_max": 630
-            },
-            {
-                "x_min": 527,
-                "y_min": 468,
-                "x_max": 715,
-                "y_max": 638
-            },
-            {
-                "x_min": 806,
-                "y_min": 470,
-                "x_max": 971,
-                "y_max": 634
+                "x_min": 733,
+                "y_min": 452,
+                "x_max": 977,
+                "y_max": 589,
+                "track_id": 1
             }
         ]
     },
     {
         "image": "DATA/frames/frame_1.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 458,
+                "y_min": 483,
+                "x_max": 920,
+                "y_max": 622,
+                "track_id": 2
+            },
+            {
+                "x_min": 678,
+                "y_min": 484,
+                "x_max": 834,
+                "y_max": 605,
+                "track_id": 3
+            },
+            {
+                "x_min": 888,
+                "y_min": 484,
+                "x_max": 1056,
+                "y_max": 614,
+                "track_id": 4
+            },
+            {
+                "x_min": 1099,
+                "y_min": 484,
+                "x_max": 1244,
+                "y_max": 614,
+                "track_id": 5
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_10.jpg",
-        "detections": [
-            {
-                "x_min": 689,
-                "y_min": 495,
-                "x_max": 949,
-                "y_max": 586
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_11.jpg",
@@ -43,33 +54,29 @@
     },
     {
         "image": "DATA/frames/frame_12.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 303,
+                "y_min": 421,
+                "x_max": 600,
+                "y_max": 588,
+                "track_id": 6
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_13.jpg",
-        "detections": [
-            {
-                "x_min": 727,
-                "y_min": 570,
-                "x_max": 1280,
-                "y_max": 720
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_14.jpg",
         "detections": [
             {
-                "x_min": 893,
-                "y_min": 543,
-                "x_max": 1140,
-                "y_max": 671
-            },
-            {
-                "x_min": 596,
-                "y_min": 543,
-                "x_max": 788,
-                "y_max": 671
+                "x_min": 817,
+                "y_min": 395,
+                "x_max": 1120,
+                "y_max": 584,
+                "track_id": 7
             }
         ]
     },
@@ -77,10 +84,11 @@
         "image": "DATA/frames/frame_15.jpg",
         "detections": [
             {
-                "x_min": 874,
-                "y_min": 568,
-                "x_max": 1090,
-                "y_max": 636
+                "x_min": 762,
+                "y_min": 537,
+                "x_max": 1000,
+                "y_max": 642,
+                "track_id": 8
             }
         ]
     },
@@ -93,9 +101,10 @@
         "detections": [
             {
                 "x_min": 0,
-                "y_min": 387,
-                "x_max": 803,
-                "y_max": 569
+                "y_min": 470,
+                "x_max": 508,
+                "y_max": 720,
+                "track_id": 9
             }
         ]
     },
@@ -103,47 +112,24 @@
         "image": "DATA/frames/frame_18.jpg",
         "detections": [
             {
-                "x_min": 504,
-                "y_min": 450,
-                "x_max": 999,
-                "y_max": 615
+                "x_min": 762,
+                "y_min": 531,
+                "x_max": 919,
+                "y_max": 664,
+                "track_id": 10
             },
             {
-                "x_min": 629,
-                "y_min": 458,
-                "x_max": 832,
-                "y_max": 627
-            },
-            {
-                "x_min": 803,
-                "y_min": 463,
-                "x_max": 1016,
-                "y_max": 621
+                "x_min": 721,
+                "y_min": 531,
+                "x_max": 919,
+                "y_max": 664,
+                "track_id": 11
             }
         ]
     },
     {
         "image": "DATA/frames/frame_19.jpg",
-        "detections": [
-            {
-                "x_min": 797,
-                "y_min": 353,
-                "x_max": 981,
-                "y_max": 583
-            },
-            {
-                "x_min": 682,
-                "y_min": 356,
-                "x_max": 834,
-                "y_max": 561
-            },
-            {
-                "x_min": 487,
-                "y_min": 356,
-                "x_max": 675,
-                "y_max": 560
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_2.jpg",
@@ -153,16 +139,11 @@
         "image": "DATA/frames/frame_20.jpg",
         "detections": [
             {
-                "x_min": 311,
-                "y_min": 502,
-                "x_max": 938,
-                "y_max": 627
-            },
-            {
-                "x_min": 604,
-                "y_min": 502,
-                "x_max": 784,
-                "y_max": 627
+                "x_min": 750,
+                "y_min": 527,
+                "x_max": 947,
+                "y_max": 677,
+                "track_id": 10
             }
         ]
     },
@@ -174,10 +155,11 @@
         "image": "DATA/frames/frame_22.jpg",
         "detections": [
             {
-                "x_min": 700,
-                "y_min": 496,
-                "x_max": 925,
-                "y_max": 605
+                "x_min": 494,
+                "y_min": 543,
+                "x_max": 770,
+                "y_max": 658,
+                "track_id": 12
             }
         ]
     },
@@ -185,60 +167,43 @@
         "image": "DATA/frames/frame_3.jpg",
         "detections": [
             {
-                "x_min": 299,
-                "y_min": 510,
-                "x_max": 919,
-                "y_max": 621
+                "x_min": 330,
+                "y_min": 353,
+                "x_max": 828,
+                "y_max": 523,
+                "track_id": 13
             }
         ]
     },
     {
         "image": "DATA/frames/frame_4.jpg",
-        "detections": [
-            {
-                "x_min": 979,
-                "y_min": 603,
-                "x_max": 1182,
-                "y_max": 671
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_5.jpg",
         "detections": [
             {
-                "x_min": 488,
-                "y_min": 499,
-                "x_max": 732,
-                "y_max": 625
+                "x_min": 811,
+                "y_min": 397,
+                "x_max": 1070,
+                "y_max": 547,
+                "track_id": 14
             }
         ]
     },
     {
         "image": "DATA/frames/frame_6.jpg",
-        "detections": [
-            {
-                "x_min": 480,
-                "y_min": 202,
-                "x_max": 762,
-                "y_max": 538
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_7.jpg",
         "detections": [
             {
-                "x_min": 618,
-                "y_min": 474,
-                "x_max": 820,
-                "y_max": 595
-            },
-            {
-                "x_min": 509,
-                "y_min": 540,
-                "x_max": 718,
-                "y_max": 663
+                "x_min": 330,
+                "y_min": 537,
+                "x_max": 408,
+                "y_max": 676,
+                "track_id": 15
             }
         ]
     },
@@ -246,22 +211,23 @@
         "image": "DATA/frames/frame_8.jpg",
         "detections": [
             {
-                "x_min": 545,
-                "y_min": 412,
-                "x_max": 1059,
-                "y_max": 661
+                "x_min": 476,
+                "y_min": 502,
+                "x_max": 657,
+                "y_max": 665,
+                "track_id": 16
+            },
+            {
+                "x_min": 661,
+                "y_min": 491,
+                "x_max": 815,
+                "y_max": 665,
+                "track_id": 17
             }
         ]
     },
     {
         "image": "DATA/frames/frame_9.jpg",
-        "detections": [
-            {
-                "x_min": 747,
-                "y_min": 193,
-                "x_max": 944,
-                "y_max": 664
-            }
-        ]
+        "detections": []
     }
 ]
