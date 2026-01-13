@@ -1,46 +1,114 @@
 [
     {
         "image": "DATA/frames/frame_0.jpg",
-        "detections": [
-            {
-                "x_min": 733,
-                "y_min": 452,
-                "x_max": 977,
-                "y_max": 589,
-                "track_id": 1
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_1.jpg",
         "detections": [
             {
-                "x_min": 458,
-                "y_min": 483,
-                "x_max": 920,
-                "y_max": 622,
-                "track_id": 2
+                "x_min": 625,
+                "y_min": 528,
+                "x_max": 835,
+                "y_max": 720,
+                "track_id": 1,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             },
             {
-                "x_min": 678,
-                "y_min": 484,
-                "x_max": 834,
-                "y_max": 605,
-                "track_id": 3
+                "x_min": 800,
+                "y_min": 543,
+                "x_max": 1007,
+                "y_max": 720,
+                "track_id": 2,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             },
             {
-                "x_min": 888,
-                "y_min": 484,
-                "x_max": 1056,
-                "y_max": 614,
-                "track_id": 4
+                "x_min": 312,
+                "y_min": 421,
+                "x_max": 480,
+                "y_max": 670,
+                "track_id": 3,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             },
             {
-                "x_min": 1099,
-                "y_min": 484,
-                "x_max": 1244,
-                "y_max": 614,
-                "track_id": 5
+                "x_min": 600,
+                "y_min": 591,
+                "x_max": 732,
+                "y_max": 720,
+                "track_id": 4,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 462,
+                "y_min": 538,
+                "x_max": 629,
+                "y_max": 686,
+                "track_id": 5,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 248,
+                "y_min": 531,
+                "x_max": 354,
+                "y_max": 697,
+                "track_id": 6,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 697,
+                "y_min": 588,
+                "x_max": 815,
+                "y_max": 708,
+                "track_id": 7,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 672,
+                "y_min": 543,
+                "x_max": 784,
+                "y_max": 720,
+                "track_id": 8,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
@@ -56,11 +124,17 @@
         "image": "DATA/frames/frame_12.jpg",
         "detections": [
             {
-                "x_min": 303,
-                "y_min": 421,
-                "x_max": 600,
-                "y_max": 588,
-                "track_id": 6
+                "x_min": 0,
+                "y_min": 264,
+                "x_max": 480,
+                "y_max": 656,
+                "track_id": 9,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
@@ -70,25 +144,23 @@
     },
     {
         "image": "DATA/frames/frame_14.jpg",
-        "detections": [
-            {
-                "x_min": 817,
-                "y_min": 395,
-                "x_max": 1120,
-                "y_max": 584,
-                "track_id": 7
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_15.jpg",
         "detections": [
             {
-                "x_min": 762,
-                "y_min": 537,
-                "x_max": 1000,
-                "y_max": 642,
-                "track_id": 8
+                "x_min": 874,
+                "y_min": 518,
+                "x_max": 1204,
+                "y_max": 630,
+                "track_id": 10,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
@@ -98,38 +170,43 @@
     },
     {
         "image": "DATA/frames/frame_17.jpg",
-        "detections": [
-            {
-                "x_min": 0,
-                "y_min": 470,
-                "x_max": 508,
-                "y_max": 720,
-                "track_id": 9
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_18.jpg",
         "detections": [
             {
-                "x_min": 762,
-                "y_min": 531,
-                "x_max": 919,
-                "y_max": 664,
-                "track_id": 10
-            },
-            {
-                "x_min": 721,
-                "y_min": 531,
-                "x_max": 919,
-                "y_max": 664,
-                "track_id": 11
+                "x_min": 122,
+                "y_min": 387,
+                "x_max": 1059,
+                "y_max": 574,
+                "track_id": 11,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
     {
         "image": "DATA/frames/frame_19.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 480,
+                "y_min": 318,
+                "x_max": 779,
+                "y_max": 591,
+                "track_id": 12,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_2.jpg",
@@ -139,11 +216,17 @@
         "image": "DATA/frames/frame_20.jpg",
         "detections": [
             {
-                "x_min": 750,
-                "y_min": 527,
-                "x_max": 947,
-                "y_max": 677,
-                "track_id": 10
+                "x_min": 325,
+                "y_min": 632,
+                "x_max": 707,
+                "y_max": 691,
+                "track_id": 13,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
@@ -155,11 +238,17 @@
         "image": "DATA/frames/frame_22.jpg",
         "detections": [
             {
-                "x_min": 494,
-                "y_min": 543,
-                "x_max": 770,
-                "y_max": 658,
-                "track_id": 12
+                "x_min": 0,
+                "y_min": 412,
+                "x_max": 1280,
+                "y_max": 596,
+                "track_id": 14,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
@@ -167,67 +256,164 @@
         "image": "DATA/frames/frame_3.jpg",
         "detections": [
             {
-                "x_min": 330,
-                "y_min": 353,
-                "x_max": 828,
-                "y_max": 523,
-                "track_id": 13
+                "x_min": 764,
+                "y_min": 459,
+                "x_max": 962,
+                "y_max": 604,
+                "track_id": 15,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
     {
         "image": "DATA/frames/frame_4.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 668,
+                "y_min": 347,
+                "x_max": 935,
+                "y_max": 500,
+                "track_id": 16,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_5.jpg",
         "detections": [
             {
-                "x_min": 811,
-                "y_min": 397,
-                "x_max": 1070,
-                "y_max": 547,
-                "track_id": 14
+                "x_min": 0,
+                "y_min": 484,
+                "x_max": 1041,
+                "y_max": 594,
+                "track_id": 17,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 753,
+                "y_min": 522,
+                "x_max": 989,
+                "y_max": 603,
+                "track_id": 18,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
     {
         "image": "DATA/frames/frame_6.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 0,
+                "y_min": 388,
+                "x_max": 378,
+                "y_max": 720,
+                "track_id": 19,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_7.jpg",
         "detections": [
             {
-                "x_min": 330,
-                "y_min": 537,
-                "x_max": 408,
-                "y_max": 676,
-                "track_id": 15
+                "x_min": 546,
+                "y_min": 457,
+                "x_max": 1088,
+                "y_max": 611,
+                "track_id": 20,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 316,
+                "y_min": 461,
+                "x_max": 554,
+                "y_max": 614,
+                "track_id": 21,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 380,
+                "y_min": 468,
+                "x_max": 561,
+                "y_max": 607,
+                "track_id": 22,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            },
+            {
+                "x_min": 203,
+                "y_min": 458,
+                "x_max": 367,
+                "y_max": 614,
+                "track_id": 23,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
             }
         ]
     },
     {
         "image": "DATA/frames/frame_8.jpg",
-        "detections": [
-            {
-                "x_min": 476,
-                "y_min": 502,
-                "x_max": 657,
-                "y_max": 665,
-                "track_id": 16
-            },
-            {
-                "x_min": 661,
-                "y_min": 491,
-                "x_max": 815,
-                "y_max": 665,
-                "track_id": 17
-            }
-        ]
+        "detections": []
     },
     {
         "image": "DATA/frames/frame_9.jpg",
-        "detections": []
+        "detections": [
+            {
+                "x_min": 861,
+                "y_min": 345,
+                "x_max": 1184,
+                "y_max": 626,
+                "track_id": 24,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 0.0,
+                    "direction": "STATIONARY"
+                }
+            }
+        ]
     }
 ]

@@ -13,7 +13,7 @@ def extract_frames(
     saved_count = 0
 
     if not cap.isOpened():
-        raise RuntimeError("❌ Video open nahi ho raha")
+        raise RuntimeError("video not opened")
 
     print("Video opened successfully")
 

@@ -39,11 +39,11 @@ class SimpleTracker:
 
         for det in detections:
 
-            # 🚫 ignore tiny / garbage boxes
-            if (det["x_max"] - det["x_min"]) < 50 or (det["y_max"] - det["y_min"]) < 50:
-                continue
+            # NOTE:
+            # Tiny-box filter TEMPORARILY REMOVED for testing Phase-3
+            # (Will be added back later for real video)
 
-            best_iou = 0
+            best_iou = 0.0
             best_id = None
 
             for track_id, prev_box in self.tracks.items():
@@ -52,7 +52,7 @@ class SimpleTracker:
                     best_iou = score
                     best_id = track_id
 
-            if best_iou > self.iou_threshold:
+            if best_iou > self.iou_threshold and best_id is not None:
                 track_id = best_id
             else:
                 track_id = next(self.next_id)
@@ -65,3 +65,76 @@ class SimpleTracker:
 
         self.tracks = updated_tracks
         return output
+
+import math
+from collections import deque
+
+class DirectionTracker:
+    def __init__(self, history_size=15, fps=30):
+        self.history_size = history_size
+        self.fps = fps
+        self.tracks = {}  # track_id -> deque of (cx, cy)
+
+    def update(self, tracked_objects):
+        """
+        tracked_objects: list of dicts having 'track_id' and 'bbox'
+        bbox format: {"x_min":, "y_min":, "x_max":, "y_max":}
+        """
+        results = []
+
+        for obj in tracked_objects:
+            tid = obj["track_id"]
+            box = {
+                "x_min": obj["x_min"],
+                "y_min": obj["y_min"],
+                "x_max": obj["x_max"],
+                "y_max": obj["y_max"]
+            }
+
+      
+            cx = (box["x_min"] + box["x_max"]) / 2
+            cy = (box["y_min"] + box["y_max"]) / 2
+
+            if tid not in self.tracks:
+                self.tracks[tid] = deque(maxlen=self.history_size)
+
+            self.tracks[tid].append((cx, cy))
+
+            dx, dy, speed, direction = self._compute_motion(self.tracks[tid])
+
+            results.append({
+                "track_id": tid,
+                "dx": dx,
+                "dy": dy,
+                "speed": speed,
+                "direction": direction
+            })
+
+        return results
+
+    def _compute_motion(self, points):
+        if len(points) < 2:
+            return 0.0, 0.0, 0.0, "STATIONARY"
+
+        x1, y1 = points[0]
+        x2, y2 = points[-1]
+
+        dx = (x2 - x1) * self.fps
+        dy = (y2 - y1) * self.fps
+
+        speed = math.sqrt(dx*dx + dy*dy)
+
+        angle = math.degrees(math.atan2(-dy, dx)) % 360
+
+        if speed < 5:
+            direction = "STATIONARY"
+        elif 45 <= angle < 135:
+            direction = "N"
+        elif 135 <= angle < 225:
+            direction = "W"
+        elif 225 <= angle < 315:
+            direction = "S"
+        else:
+            direction = "E"
+
+        return dx, dy, speed, direction
