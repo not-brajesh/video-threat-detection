@@ -1,62 +1,90 @@
 import json
 import os
 
-# trackers
-from tracker import SimpleTracker, DirectionTracker
+# =========================
+# Phase 4: Relationship Analysis
+# =========================
+from src.analysis.relationship_analyzer import RelationshipAnalyzer
 
-# local imports
-from frame_extractor import extract_frames
-from vlm_detector import llava_detect
+# =========================
+# Phase 2: Tracking
+# =========================
+from src.detection.tracker import SimpleTracker
+
+# =========================
+# Phase 3: Motion / Direction
+# =========================
+from src.tracking.direction_tracker import DirectionTracker
+
+# =========================
+# Local pipeline imports
+# =========================
+from src.detection.frame_extractor import extract_frames
+from src.detection.vlm_detector import llava_detect
+
 
 VIDEO_PATH = "DATA/videos/sample.mp4"
 OUTPUT_JSON = "DATA/output_detections.json"
-FPS = 30
 
 
 def run_video_pipeline(video_path):
     """
-    Phase 3 pipeline:
-    Video -> Frames -> Detection -> Tracking -> Motion -> JSON
+    Phase 4 pipeline:
+    Video -> Frames -> Detection -> Tracking -> Motion -> Relationships -> JSON
     """
 
     frames = extract_frames(
         video_path,
         output_dir="DATA/frames",
-        every_n_frames=60
+        every_n_frames=5
     )
 
-    # 🔒 Trackers initialized ONCE
     tracker = SimpleTracker(iou_threshold=0.4)
-    direction_tracker = DirectionTracker(fps=FPS)
+    direction_tracker = DirectionTracker()
+
+    relationship_analyzer = RelationshipAnalyzer(
+        distance_threshold=120,
+        min_frames=2
+    )
 
     all_results = []
 
-    for frame_path in frames:
+    for frame_idx, frame_path in enumerate(frames):
+
         result = llava_detect(frame_path)
         detections = result.get("detections", [])
 
-        # 🧠 Apply tracking
         if detections:
             tracked_boxes = tracker.update(detections)
-            motion_data = direction_tracker.update(tracked_boxes)
+            motion_data = direction_tracker.update(tracked_boxes, frame_idx)
         else:
             tracked_boxes = []
             motion_data = []
 
-        # attach motion info to detections
+        # 🔒 SAFE motion map
+        motion_map = {}
+        for m in motion_data:
+            tid = m.get("track_id")
+            if tid is not None:
+                motion_map[tid] = m
+
+        # attach motion safely
         for det in tracked_boxes:
-            for motion in motion_data:
-                if det["track_id"] == motion["track_id"]:
-                    det["motion"] = {
-                        "dx": motion["dx"],
-                        "dy": motion["dy"],
-                        "speed": motion["speed"],
-                        "direction": motion["direction"]
-                    }
+            m = motion_map.get(det["track_id"])
+            if m:
+                det["motion"] = {
+                    "dx": m.get("dx", 0.0),
+                    "dy": m.get("dy", 0.0),
+                    "speed": m.get("speed", 0.0),
+                    "direction": m.get("direction", "STATIONARY")
+                }
+
+        relationships = relationship_analyzer.analyze(tracked_boxes)
 
         all_results.append({
             "image": frame_path,
-            "detections": tracked_boxes
+            "detections": tracked_boxes,
+            "relationships": relationships
         })
 
     return all_results
@@ -71,5 +99,5 @@ if __name__ == "__main__":
     with open(OUTPUT_JSON, "w") as f:
         json.dump(results, f, indent=4)
 
-    print("✅ Phase 3 complete. Detection + Tracking + Motion saved.")
+    print("✅ Phase 4 complete. Detection + Tracking + Motion + Relationships saved.")
     print(f"📄 Output file: {OUTPUT_JSON}")

@@ -5,7 +5,8 @@ import re
 import time
 from PIL import Image
 
-from bbox_utils import normalized_to_pixel_bbox
+# ✅ CORRECT absolute import (THIS FIXES YOUR ERROR)
+from src.detection.bbox_utils import normalized_to_pixel_bbox
 
 
 # =========================
@@ -79,7 +80,7 @@ def is_valid_box(b):
     if not required.issubset(b.keys()):
         return False
 
-    # full-frame garbage
+    # ❌ reject full-frame garbage
     if (
         b["x_min"] == 0 and b["y_min"] == 0 and
         b["x_max"] == 1 and b["y_max"] == 1
@@ -144,7 +145,6 @@ def llava_detect(image_path):
     pixel_boxes = []
     for b in boxes:
         if isinstance(b, dict) and is_valid_box(b):
-            # clamp safety
             b["x_min"] = clamp(b["x_min"])
             b["y_min"] = clamp(b["y_min"])
             b["x_max"] = clamp(b["x_max"])
@@ -163,7 +163,7 @@ def llava_detect(image_path):
 
 
 # =========================
-# Test
+# Local test
 # =========================
 if __name__ == "__main__":
     test_image = "DATA/frames/frame_0.jpg"
