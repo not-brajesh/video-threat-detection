@@ -130,7 +130,7 @@ Each tracked object now includes motion metadata:
 
 ## ✅ Phase 4 – Relationship Analysis & Final Pipeline
 
-**Status: Completed
+**Status: Completed**
 
 ### Added Capabilities
 - Proximity-based relationship detection between tracked persons
