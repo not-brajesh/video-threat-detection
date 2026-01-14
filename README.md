@@ -53,29 +53,33 @@ video-threat-detection/
 ├── DATA/
 │   ├── videos/
 │   │   └── sample.mp4
-│   ├── frames/                 
+│   ├── frames/                     # Auto-generated frames (gitignored)
 │   └── output_detections.json
 │
 ├── src/
+│   ├── analysis/
+│   │   ├── __init__.py
+│   │   └── relationship_analyzer.py
+│   │
 │   ├── detection/
+│   │   ├── __init__.py
+│   │   ├── bbox_utils.py
 │   │   ├── frame_extractor.py
 │   │   ├── image_loader.py
-│   │   ├── bbox_utils.py
-│   │   ├── vlm_detector.py
+│   │   ├── person_detector.py
 │   │   ├── tracker.py
+│   │   ├── vlm_detector.py
 │   │   ├── vlm_model_load.py
 │   │   └── run_video_detection.py
 │   │
 │   ├── tracking/
-│   │   └── direction_tracker.py
-│   │
-│   └── analysis/
-│       └── relationship_analyzer.py
+│   │   ├── __init__.py
+│   │   ├── direction_tracker.py
+│   │   └── test_direction_tracker.py
 │
 ├── main.py
 ├── .gitignore
 └── README.md
-
 
 ---
 
