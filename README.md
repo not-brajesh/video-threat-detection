@@ -51,26 +51,26 @@ This project implements an **AI-powered video threat detection pipeline** capabl
 video-threat-detection/
 │
 ├── DATA/
-│ ├── videos/
-│ │ └── sample.mp4
-│ ├── frames/ # Auto-generated (gitignored)
-│ └── output_detections.json
+│   ├── videos/
+│   │   └── sample.mp4
+│   ├── frames/                 
+│   └── output_detections.json
 │
 ├── src/
-│ ├── detection/
-│ │ ├── frame_extractor.py
-│ │ ├── image_loader.py
-│ │ ├── bbox_utils.py
-│ │ ├── vlm_detector.py
-│ │ ├── tracker.py
-│ │ ├── vlm_model_load.py
-│ │ └── run_video_detection.py
-│ │
-│ ├── tracking/
-│ │ └── direction_tracker.py
-│ │
-│ └── analysis/
-│ └── relationship_analyzer.py
+│   ├── detection/
+│   │   ├── frame_extractor.py
+│   │   ├── image_loader.py
+│   │   ├── bbox_utils.py
+│   │   ├── vlm_detector.py
+│   │   ├── tracker.py
+│   │   ├── vlm_model_load.py
+│   │   └── run_video_detection.py
+│   │
+│   ├── tracking/
+│   │   └── direction_tracker.py
+│   │
+│   └── analysis/
+│       └── relationship_analyzer.py
 │
 ├── main.py
 ├── .gitignore
