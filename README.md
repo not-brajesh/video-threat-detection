@@ -47,13 +47,12 @@ This project implements an **AI-powered video threat detection pipeline** capabl
 
 ## 📁 Project Structure
 
-
+```
 video-threat-detection/
-│
 ├── DATA/
 │   ├── videos/
 │   │   └── sample.mp4
-│   ├── frames/                     # Auto-generated frames (gitignored)
+│   ├── frames/                     # Auto-generated (gitignored)
 │   └── output_detections.json
 │
 ├── src/
@@ -80,7 +79,7 @@ video-threat-detection/
 ├── main.py
 ├── .gitignore
 └── README.md
-
+```
 ---
 
 ## ✅ Phase 1 – Environment & Model Integration
