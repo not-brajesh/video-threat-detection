@@ -1,811 +1,1584 @@
 [
     {
         "image": "DATA/frames/frame_0.jpg",
-        "detections": [
-            {
-                "x_min": 747,
-                "y_min": 501,
-                "x_max": 913,
-                "y_max": 601,
-                "track_id": 1,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_1.jpg",
         "detections": [
             {
-                "x_min": 698,
-                "y_min": 451,
-                "x_max": 1072,
-                "y_max": 582,
+                "x_min": 821,
+                "y_min": 613,
+                "x_max": 1045,
+                "y_max": 720,
+                "track_id": 1,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 629,
+                "y_min": 622,
+                "x_max": 738,
+                "y_max": 720,
                 "track_id": 2,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 504,
+                "y_min": 622,
+                "x_max": 732,
+                "y_max": 720,
+                "track_id": 3,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    1
+                ],
+                "frame": "DATA/frames/frame_1.jpg",
+                "timestamp": 1769330168.88681
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    2
+                ],
+                "frame": "DATA/frames/frame_1.jpg",
+                "timestamp": 1769330168.886837
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    3
+                ],
+                "frame": "DATA/frames/frame_1.jpg",
+                "timestamp": 1769330168.886841
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_10.jpg",
         "detections": [
             {
-                "x_min": 587,
-                "y_min": 277,
-                "x_max": 789,
-                "y_max": 480,
-                "track_id": 3,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
-    },
-    {
-        "image": "DATA/frames/frame_11.jpg",
-        "detections": [],
-        "relationships": []
-    },
-    {
-        "image": "DATA/frames/frame_12.jpg",
-        "detections": [
-            {
-                "x_min": 454,
-                "y_min": 354,
-                "x_max": 789,
-                "y_max": 553,
+                "x_min": 560,
+                "y_min": 474,
+                "x_max": 747,
+                "y_max": 584,
                 "track_id": 4,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
-            }
-        ],
-        "relationships": []
-    },
-    {
-        "image": "DATA/frames/frame_13.jpg",
-        "detections": [
+            },
             {
-                "x_min": 352,
-                "y_min": 460,
-                "x_max": 693,
+                "x_min": 348,
+                "y_min": 467,
+                "x_max": 560,
                 "y_max": 586,
                 "track_id": 5,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    4
+                ],
+                "frame": "DATA/frames/frame_10.jpg",
+                "timestamp": 1769330183.3797052
             },
             {
-                "x_min": 817,
-                "y_min": 528,
-                "x_max": 1077,
-                "y_max": 627,
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    5
+                ],
+                "frame": "DATA/frames/frame_10.jpg",
+                "timestamp": 1769330183.379712
+            }
+        ]
+    },
+    {
+        "image": "DATA/frames/frame_11.jpg",
+        "detections": [
+            {
+                "x_min": 636,
+                "y_min": 495,
+                "x_max": 903,
+                "y_max": 588,
                 "track_id": 6,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             },
             {
-                "x_min": 864,
-                "y_min": 604,
-                "x_max": 1077,
-                "y_max": 659,
+                "x_min": 689,
+                "y_min": 491,
+                "x_max": 856,
+                "y_max": 586,
                 "track_id": 7,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 480,
+                "y_min": 548,
+                "x_max": 693,
+                "y_max": 658,
+                "track_id": 8,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    6
+                ],
+                "frame": "DATA/frames/frame_11.jpg",
+                "timestamp": 1769330443.731555
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    7
+                ],
+                "frame": "DATA/frames/frame_11.jpg",
+                "timestamp": 1769330443.731575
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    8
+                ],
+                "frame": "DATA/frames/frame_11.jpg",
+                "timestamp": 1769330443.731578
+            }
+        ]
+    },
+    {
+        "image": "DATA/frames/frame_12.jpg",
+        "detections": [
+            {
+                "x_min": 450,
+                "y_min": 467,
+                "x_max": 1063,
+                "y_max": 573,
+                "track_id": 9,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    9
+                ],
+                "frame": "DATA/frames/frame_12.jpg",
+                "timestamp": 1769330456.6523368
+            }
+        ]
+    },
+    {
+        "image": "DATA/frames/frame_13.jpg",
+        "detections": [
+            {
+                "x_min": 508,
+                "y_min": 329,
+                "x_max": 770,
+                "y_max": 526,
+                "track_id": 10,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 628,
+                "y_min": 442,
+                "x_max": 834,
+                "y_max": 604,
+                "track_id": 11,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 907,
+                "y_min": 337,
+                "x_max": 1056,
+                "y_max": 526,
+                "track_id": 12,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 353,
+                "y_min": 359,
+                "x_max": 590,
+                "y_max": 532,
+                "track_id": 13,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    10
+                ],
+                "frame": "DATA/frames/frame_13.jpg",
+                "timestamp": 1769330479.480018
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    11
+                ],
+                "frame": "DATA/frames/frame_13.jpg",
+                "timestamp": 1769330479.480026
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    12
+                ],
+                "frame": "DATA/frames/frame_13.jpg",
+                "timestamp": 1769330479.4800289
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    13
+                ],
+                "frame": "DATA/frames/frame_13.jpg",
+                "timestamp": 1769330479.480032
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_14.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_15.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 757,
+                "y_min": 586,
+                "x_max": 1012,
+                "y_max": 701,
+                "track_id": 14,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 719,
+                "y_min": 586,
+                "x_max": 994,
+                "y_max": 674,
+                "track_id": 15,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    14
+                ],
+                "frame": "DATA/frames/frame_15.jpg",
+                "timestamp": 1769330498.3670552
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    15
+                ],
+                "frame": "DATA/frames/frame_15.jpg",
+                "timestamp": 1769330498.367062
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_16.jpg",
         "detections": [
             {
-                "x_min": 450,
-                "y_min": 611,
-                "x_max": 974,
-                "y_max": 720,
-                "track_id": 8,
+                "x_min": 336,
+                "y_min": 356,
+                "x_max": 913,
+                "y_max": 590,
+                "track_id": 16,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    16
+                ],
+                "frame": "DATA/frames/frame_16.jpg",
+                "timestamp": 1769330507.8997178
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_17.jpg",
         "detections": [
             {
-                "x_min": 811,
-                "y_min": 674,
-                "x_max": 1280,
-                "y_max": 709,
-                "track_id": 9,
+                "x_min": 578,
+                "y_min": 552,
+                "x_max": 861,
+                "y_max": 720,
+                "track_id": 17,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 724,
+                "y_min": 534,
+                "x_max": 1061,
+                "y_max": 720,
+                "track_id": 18,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    17
+                ],
+                "frame": "DATA/frames/frame_17.jpg",
+                "timestamp": 1769330531.331689
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    18
+                ],
+                "frame": "DATA/frames/frame_17.jpg",
+                "timestamp": 1769330531.331695
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_18.jpg",
         "detections": [
             {
-                "x_min": 675,
-                "y_min": 534,
-                "x_max": 871,
-                "y_max": 661,
-                "track_id": 10,
+                "x_min": 825,
+                "y_min": 274,
+                "x_max": 1013,
+                "y_max": 542,
+                "track_id": 19,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    19
+                ],
+                "frame": "DATA/frames/frame_18.jpg",
+                "timestamp": 1769330540.755538
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_19.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_2.jpg",
         "detections": [
             {
-                "x_min": 0,
-                "y_min": 702,
-                "x_max": 1076,
+                "x_min": 970,
+                "y_min": 498,
+                "x_max": 970,
                 "y_max": 720,
-                "track_id": 11,
+                "track_id": 20,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    20
+                ],
+                "frame": "DATA/frames/frame_2.jpg",
+                "timestamp": 1769330555.645495
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_20.jpg",
         "detections": [
             {
-                "x_min": 560,
-                "y_min": 428,
-                "x_max": 802,
-                "y_max": 558,
-                "track_id": 12,
+                "x_min": 0,
+                "y_min": 569,
+                "x_max": 592,
+                "y_max": 640,
+                "track_id": 21,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 679,
+                "y_min": 563,
+                "x_max": 984,
+                "y_max": 635,
+                "track_id": 22,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    21
+                ],
+                "frame": "DATA/frames/frame_20.jpg",
+                "timestamp": 1769330567.650102
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    22
+                ],
+                "frame": "DATA/frames/frame_20.jpg",
+                "timestamp": 1769330567.65011
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_21.jpg",
         "detections": [
             {
-                "x_min": 337,
-                "y_min": 416,
-                "x_max": 551,
-                "y_max": 573,
-                "track_id": 13,
+                "x_min": 800,
+                "y_min": 254,
+                "x_max": 963,
+                "y_max": 587,
+                "track_id": 23,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             },
             {
-                "x_min": 837,
-                "y_min": 419,
-                "x_max": 985,
-                "y_max": 585,
-                "track_id": 14,
+                "x_min": 295,
+                "y_min": 406,
+                "x_max": 604,
+                "y_max": 576,
+                "track_id": 24,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 441,
+                "y_min": 498,
+                "x_max": 675,
+                "y_max": 676,
+                "track_id": 25,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 245,
+                "y_min": 483,
+                "x_max": 445,
+                "y_max": 680,
+                "track_id": 26,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 771,
+                "y_min": 224,
+                "x_max": 1006,
+                "y_max": 427,
+                "track_id": 27,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 614,
+                "y_min": 524,
+                "x_max": 814,
+                "y_max": 658,
+                "track_id": 28,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    23
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.7864609
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    24
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.786468
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    25
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.786471
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    26
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.786473
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    27
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.786475
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    28
+                ],
+                "frame": "DATA/frames/frame_21.jpg",
+                "timestamp": 1769330592.786477
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_22.jpg",
         "detections": [
             {
-                "x_min": 336,
-                "y_min": 538,
-                "x_max": 657,
-                "y_max": 660,
-                "track_id": 15,
+                "x_min": 954,
+                "y_min": 600,
+                "x_max": 1218,
+                "y_max": 720,
+                "track_id": 29,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    29
+                ],
+                "frame": "DATA/frames/frame_22.jpg",
+                "timestamp": 1769330601.7921999
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_23.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_24.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 753,
+                "y_min": 339,
+                "x_max": 1280,
+                "y_max": 481,
+                "track_id": 30,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    30
+                ],
+                "frame": "DATA/frames/frame_24.jpg",
+                "timestamp": 1769330619.2175858
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_25.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_26.jpg",
         "detections": [
             {
-                "x_min": 327,
-                "y_min": 492,
-                "x_max": 738,
-                "y_max": 669,
-                "track_id": 15,
+                "x_min": 604,
+                "y_min": 421,
+                "x_max": 753,
+                "y_max": 607,
+                "track_id": 31,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    31
+                ],
+                "frame": "DATA/frames/frame_26.jpg",
+                "timestamp": 1769330636.9241369
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_27.jpg",
         "detections": [
             {
-                "x_min": 0,
-                "y_min": 424,
-                "x_max": 820,
-                "y_max": 593,
-                "track_id": 16,
+                "x_min": 686,
+                "y_min": 568,
+                "x_max": 803,
+                "y_max": 658,
+                "track_id": 32,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    32
+                ],
+                "frame": "DATA/frames/frame_27.jpg",
+                "timestamp": 1769330645.7867699
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_28.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_29.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_3.jpg",
-        "detections": [
-            {
-                "x_min": 492,
-                "y_min": 538,
-                "x_max": 800,
-                "y_max": 661,
-                "track_id": 17,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_30.jpg",
         "detections": [
             {
-                "x_min": 616,
-                "y_min": 539,
-                "x_max": 820,
-                "y_max": 658,
-                "track_id": 17,
+                "x_min": 0,
+                "y_min": 532,
+                "x_max": 750,
+                "y_max": 720,
+                "track_id": 33,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             },
             {
-                "x_min": 336,
-                "y_min": 565,
-                "x_max": 544,
-                "y_max": 699,
-                "track_id": 18,
+                "x_min": 578,
+                "y_min": 532,
+                "x_max": 875,
+                "y_max": 720,
+                "track_id": 34,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 744,
+                "y_min": 532,
+                "x_max": 1076,
+                "y_max": 720,
+                "track_id": 35,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    33
+                ],
+                "frame": "DATA/frames/frame_30.jpg",
+                "timestamp": 1769330687.107382
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    34
+                ],
+                "frame": "DATA/frames/frame_30.jpg",
+                "timestamp": 1769330687.107386
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    35
+                ],
+                "frame": "DATA/frames/frame_30.jpg",
+                "timestamp": 1769330687.107388
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_31.jpg",
-        "detections": [
-            {
-                "x_min": 757,
-                "y_min": 550,
-                "x_max": 1076,
-                "y_max": 678,
-                "track_id": 19,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_32.jpg",
-        "detections": [
-            {
-                "x_min": 468,
-                "y_min": 488,
-                "x_max": 739,
-                "y_max": 591,
-                "track_id": 20,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_33.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_34.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_35.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 544,
+                "y_min": 552,
+                "x_max": 807,
+                "y_max": 649,
+                "track_id": 36,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 696,
+                "y_min": 552,
+                "x_max": 935,
+                "y_max": 656,
+                "track_id": 37,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    36
+                ],
+                "frame": "DATA/frames/frame_35.jpg",
+                "timestamp": 1769330736.312432
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    37
+                ],
+                "frame": "DATA/frames/frame_35.jpg",
+                "timestamp": 1769330736.312437
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_36.jpg",
         "detections": [
             {
-                "x_min": 357,
-                "y_min": 470,
-                "x_max": 586,
-                "y_max": 591,
-                "track_id": 21,
+                "x_min": 547,
+                "y_min": 458,
+                "x_max": 762,
+                "y_max": 586,
+                "track_id": 38,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    38
+                ],
+                "frame": "DATA/frames/frame_36.jpg",
+                "timestamp": 1769330745.8986409
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_37.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_38.jpg",
         "detections": [
             {
-                "x_min": 721,
-                "y_min": 527,
-                "x_max": 1169,
-                "y_max": 620,
-                "track_id": 22,
+                "x_min": 0,
+                "y_min": 212,
+                "x_max": 1280,
+                "y_max": 578,
+                "track_id": 39,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    39
+                ],
+                "frame": "DATA/frames/frame_38.jpg",
+                "timestamp": 1769330765.0759811
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_39.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_4.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 350,
+                "y_min": 453,
+                "x_max": 1088,
+                "y_max": 642,
+                "track_id": 40,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    40
+                ],
+                "frame": "DATA/frames/frame_4.jpg",
+                "timestamp": 1769330784.5409012
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_40.jpg",
         "detections": [
             {
-                "x_min": 413,
-                "y_min": 412,
-                "x_max": 889,
-                "y_max": 573,
-                "track_id": 23,
+                "x_min": 697,
+                "y_min": 524,
+                "x_max": 974,
+                "y_max": 599,
+                "track_id": 41,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 546,
-                "y_min": 420,
-                "x_max": 784,
-                "y_max": 573,
-                "track_id": 24,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    41
+                ],
+                "frame": "DATA/frames/frame_40.jpg",
+                "timestamp": 1769330804.70346
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_41.jpg",
-        "detections": [
-            {
-                "x_min": 586,
-                "y_min": 498,
-                "x_max": 949,
-                "y_max": 598,
-                "track_id": 25,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_42.jpg",
-        "detections": [
-            {
-                "x_min": 832,
-                "y_min": 534,
-                "x_max": 1073,
-                "y_max": 627,
-                "track_id": 26,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            }
-        ],
-        "relationships": []
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_43.jpg",
         "detections": [
             {
-                "x_min": 592,
-                "y_min": 594,
-                "x_max": 912,
-                "y_max": 687,
-                "track_id": 27,
+                "x_min": 739,
+                "y_min": 316,
+                "x_max": 871,
+                "y_max": 522,
+                "track_id": 42,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 899,
+                "y_min": 357,
+                "x_max": 1041,
+                "y_max": 534,
+                "track_id": 43,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 419,
+                "y_min": 470,
+                "x_max": 551,
+                "y_max": 617,
+                "track_id": 44,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 757,
+                "y_min": 470,
+                "x_max": 934,
+                "y_max": 622,
+                "track_id": 45,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    42
+                ],
+                "frame": "DATA/frames/frame_43.jpg",
+                "timestamp": 1769330839.561713
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    43
+                ],
+                "frame": "DATA/frames/frame_43.jpg",
+                "timestamp": 1769330839.5617201
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    44
+                ],
+                "frame": "DATA/frames/frame_43.jpg",
+                "timestamp": 1769330839.561723
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    45
+                ],
+                "frame": "DATA/frames/frame_43.jpg",
+                "timestamp": 1769330839.561725
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_44.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 817,
+                "y_min": 424,
+                "x_max": 1280,
+                "y_max": 608,
+                "track_id": 46,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    46
+                ],
+                "frame": "DATA/frames/frame_44.jpg",
+                "timestamp": 1769330849.61487
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_45.jpg",
         "detections": [
             {
-                "x_min": 412,
-                "y_min": 552,
-                "x_max": 721,
-                "y_max": 660,
-                "track_id": 28,
+                "x_min": 0,
+                "y_min": 605,
+                "x_max": 1280,
+                "y_max": 720,
+                "track_id": 47,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    47
+                ],
+                "frame": "DATA/frames/frame_45.jpg",
+                "timestamp": 1769330859.738249
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_46.jpg",
         "detections": [],
-        "relationships": []
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_5.jpg",
-        "detections": [],
-        "relationships": []
-    },
-    {
-        "image": "DATA/frames/frame_6.jpg",
         "detections": [
             {
-                "x_min": 625,
-                "y_min": 458,
-                "x_max": 674,
-                "y_max": 618,
-                "track_id": 29,
+                "x_min": 0,
+                "y_min": 537,
+                "x_max": 719,
+                "y_max": 650,
+                "track_id": 48,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             },
             {
-                "x_min": 532,
-                "y_min": 456,
-                "x_max": 605,
-                "y_max": 618,
-                "track_id": 30,
+                "x_min": 789,
+                "y_min": 605,
+                "x_max": 1058,
+                "y_max": 700,
+                "track_id": 49,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 462,
-                "y_min": 448,
-                "x_max": 536,
-                "y_max": 618,
-                "track_id": 31,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    48
+                ],
+                "frame": "DATA/frames/frame_5.jpg",
+                "timestamp": 1769330882.936797
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    49
+                ],
+                "frame": "DATA/frames/frame_5.jpg",
+                "timestamp": 1769330882.936804
+            }
+        ]
+    },
+    {
+        "image": "DATA/frames/frame_6.jpg",
+        "detections": [],
+        "relationships": [],
+        "threats": []
     },
     {
         "image": "DATA/frames/frame_7.jpg",
         "detections": [
             {
-                "x_min": 940,
-                "y_min": 623,
-                "x_max": 1167,
-                "y_max": 682,
-                "track_id": 32,
+                "x_min": 814,
+                "y_min": 590,
+                "x_max": 1218,
+                "y_max": 720,
+                "track_id": 49,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 687,
-                "y_min": 488,
-                "x_max": 800,
-                "y_max": 614,
-                "track_id": 33,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 404,
-                "y_min": 524,
-                "x_max": 550,
-                "y_max": 614,
-                "track_id": 34,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 238,
-                "y_min": 524,
-                "x_max": 436,
-                "y_max": 614,
-                "track_id": 35,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 774,
-                "y_min": 617,
-                "x_max": 888,
-                "y_max": 686,
-                "track_id": 36,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 359,
-                "y_min": 617,
-                "x_max": 540,
-                "y_max": 686,
-                "track_id": 37,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 238,
-                "y_min": 617,
-                "x_max": 436,
-                "y_max": 686,
-                "track_id": 38,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    49
+                ],
+                "frame": "DATA/frames/frame_7.jpg",
+                "timestamp": 1769330920.421689
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_8.jpg",
         "detections": [
             {
-                "x_min": 597,
-                "y_min": 608,
-                "x_max": 1012,
-                "y_max": 709,
-                "track_id": 39,
+                "x_min": 802,
+                "y_min": 276,
+                "x_max": 1200,
+                "y_max": 424,
+                "track_id": 50,
                 "motion": {
                     "dx": 0.0,
                     "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
-                }
-            },
-            {
-                "x_min": 496,
-                "y_min": 377,
-                "x_max": 718,
-                "y_max": 575,
-                "track_id": 40,
-                "motion": {
-                    "dx": 0.0,
-                    "dy": 0.0,
-                    "speed": 0.0,
-                    "direction": "STATIONARY"
+                    "speed": 25.0,
+                    "direction": "RUNNING"
                 }
             }
         ],
-        "relationships": []
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    50
+                ],
+                "frame": "DATA/frames/frame_8.jpg",
+                "timestamp": 1769330930.433305
+            }
+        ]
     },
     {
         "image": "DATA/frames/frame_9.jpg",
-        "detections": [],
-        "relationships": []
+        "detections": [
+            {
+                "x_min": 700,
+                "y_min": 644,
+                "x_max": 1181,
+                "y_max": 720,
+                "track_id": 51,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 601,
+                "y_min": 637,
+                "x_max": 846,
+                "y_max": 669,
+                "track_id": 52,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            },
+            {
+                "x_min": 476,
+                "y_min": 637,
+                "x_max": 718,
+                "y_max": 678,
+                "track_id": 53,
+                "motion": {
+                    "dx": 0.0,
+                    "dy": 0.0,
+                    "speed": 25.0,
+                    "direction": "RUNNING"
+                }
+            }
+        ],
+        "relationships": [],
+        "threats": [
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    51
+                ],
+                "frame": "DATA/frames/frame_9.jpg",
+                "timestamp": 1769330952.981054
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    52
+                ],
+                "frame": "DATA/frames/frame_9.jpg",
+                "timestamp": 1769330952.981066
+            },
+            {
+                "threat_type": "RUNNING",
+                "severity": 2,
+                "description": "Person running with speed 25.00",
+                "involved_ids": [
+                    53
+                ],
+                "frame": "DATA/frames/frame_9.jpg",
+                "timestamp": 1769330952.9810681
+            }
+        ]
     }
 ]

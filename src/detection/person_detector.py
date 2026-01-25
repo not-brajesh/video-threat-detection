@@ -1,37 +1,40 @@
-import cv2
+def remove_duplicates(detections, eps=0.02):
+    unique = []
+    for d in detections:
+        duplicate = False
+        for u in unique:
+            if (
+                abs(d["x_min"] - u["x_min"]) < eps and
+                abs(d["y_min"] - u["y_min"]) < eps and
+                abs(d["x_max"] - u["x_max"]) < eps and
+                abs(d["y_max"] - u["y_max"]) < eps
+            ):
+                duplicate = True
+                break
+        if not duplicate:
+            unique.append(d)
+    return unique
 
-"""
-# Dummy bounding box (Day 5 learning)
-x1 = int(w * 0.3)
-y1 = int(h * 0.3)
-x2 = int(w * 0.6)
-y2 = int(h * 0.8)
 
-cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-"""
+def remove_full_frame_boxes(detections, tol=0.02):
+    cleaned = []
+    for d in detections:
+        if (
+            d["x_min"] <= tol and
+            d["y_min"] <= tol and
+            d["x_max"] >= 1.0 - tol and
+            d["y_max"] >= 1.0 - tol
+        ):
+            continue
+        cleaned.append(d)
+    return cleaned
 
 
-image_path = "data/frames/frame_0.jpg"
+def detect_persons(raw_detections):
+    if not raw_detections:
+        return []
 
-img = cv2.imread(image_path)
+    detections = remove_duplicates(raw_detections)
+    detections = remove_full_frame_boxes(detections)
 
-if img is None:
-    print("Image load nahi hui")
-else:
-    print("Image loaded successfully")
-    print("Image shape:", img.shape)
-
-    h, w, _ = img.shape
-
-    x1 = int(w * 0.3)
-    y1 = int(h * 0.3)
-    x2 = int(w * 0.6)
-    y2 = int(h * 0.8)
-
-    print("BBox coordinates:", x1, y1, x2, y2)
-
-    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-    cv2.imshow("Person Detector - Dummy Box", img)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    return detections
