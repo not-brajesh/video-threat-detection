@@ -2,15 +2,11 @@
 
 import math
 from collections import deque
-from src.detection.tracker import SimpleTracker
 
 
 class DirectionTracker:
-    def __init__(self, iou_threshold=0.4, history_size=5):
-        self.tracker = SimpleTracker(iou_threshold=iou_threshold)
+    def __init__(self, history_size=5):
         self.history_size = history_size
-
-        # track_id -> deque of (cx, cy)
         self.track_history = {}
 
     def _get_center(self, box):
@@ -18,11 +14,12 @@ class DirectionTracker:
         cy = (box["y_min"] + box["y_max"]) / 2
         return cx, cy
 
-    def update(self, detections, frame_idx):
-        tracked = self.tracker.update(detections)
+    def update(self, tracked_boxes, frame_idx):
+        for det in tracked_boxes:
+            tid = det.get("track_id")
+            if tid is None:
+                continue
 
-        for det in tracked:
-            tid = det["track_id"]
             cx, cy = self._get_center(det)
 
             if tid not in self.track_history:
@@ -30,9 +27,6 @@ class DirectionTracker:
 
             self.track_history[tid].append((cx, cy))
 
-        return tracked
-
-    # ✅ THIS WAS MISSING
     def get_motion_vector(self, track_id):
         history = self.track_history.get(track_id, [])
 
@@ -41,7 +35,6 @@ class DirectionTracker:
 
         (x1, y1) = history[-2]
         (x2, y2) = history[-1]
-
         return x2 - x1, y2 - y1
 
     def get_speed(self, track_id):
