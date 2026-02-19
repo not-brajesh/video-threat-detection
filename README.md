@@ -207,6 +207,23 @@ Threats are stored directly in the output JSON.
 ✔ Phase 5 – Completed
 
 The system is now **end-to-end functional** and ready for extension.
+---
+## ⚙️ Setup Instructions
+
+~~~
+git clone <repo_url>
+cd video-threat-detection
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+~~~
+
+Run Detection Pipeline
+
+~~~
+python src/detection/run_video_detection.py
+~~~
+
 
 ---
 
