@@ -206,3 +206,14 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 DATA/frames/
+# macOS junk
+.DS_Store
+
+# Generated outputs
+DATA/output_detections.json
+
+# Ignore all videos
+DATA/videos/
+
+# Just in case
+DATA/*.mp4
