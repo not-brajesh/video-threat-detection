@@ -16,10 +16,10 @@ OUTPUT_JSON = "DATA/output_detections.json"
 
 def run_video_pipeline(video_path):
 
+    # 🔥 Removed every_n_frames parameter
     frames = extract_frames(
         video_path,
-        output_dir="DATA/frames",
-        every_n_frames=5
+        output_dir="DATA/frames"
     )
 
     tracker = SimpleTracker(iou_threshold=0.4)
@@ -47,7 +47,6 @@ def run_video_pipeline(video_path):
         else:
             tracked_boxes = []
 
-        # Attach REAL motion directly (no motion_data list)
         for det in tracked_boxes:
             tid = det.get("track_id")
             if tid is None:

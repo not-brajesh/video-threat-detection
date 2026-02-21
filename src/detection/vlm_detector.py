@@ -14,8 +14,8 @@ from src.detection.bbox_utils import normalized_to_pixel_bbox
 # =========================
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL_NAME = "llava:7b"
-TIMEOUT = 240
-MAX_RETRIES = 2
+TIMEOUT = 60
+MAX_RETRIES = 1
 
 
 # =========================
@@ -90,7 +90,7 @@ def is_valid_box(b):
     return True
 
 
-def deduplicate_boxes(boxes, tol=20):
+def deduplicate_boxes(boxes, tol=5):
     unique = []
     for b in boxes:
         if not any(
@@ -108,8 +108,14 @@ def deduplicate_boxes(boxes, tol=20):
 # Detector
 # =========================
 def llava_detect(image_path):
-    image = Image.open(image_path).convert("RGB")
-    w, h = image.size
+
+    # Faster image dimension reading (PIL removed)
+    import cv2
+    img = cv2.imread(image_path)
+    if img is None:
+        return {"image": image_path, "detections": []}
+
+    h, w = img.shape[:2]
 
     payload = {
         "model": MODEL_NAME,
@@ -120,7 +126,8 @@ def llava_detect(image_path):
 
     raw_text = ""
 
-    for attempt in range(1, MAX_RETRIES + 1):
+    # Reduced retries to 1 (less waiting)
+    for attempt in range(1, 2):
         try:
             r = requests.post(
                 OLLAMA_URL,
@@ -129,22 +136,20 @@ def llava_detect(image_path):
             )
             raw_text = r.json().get("response", "")
             break
-        except Exception as e:
-            print(f"⚠️ Ollama attempt {attempt} failed:", e)
-            time.sleep(2)
+        except Exception:
+            time.sleep(1)
 
     if not raw_text:
         return {"image": image_path, "detections": []}
 
-    print("\n===== RAW MODEL OUTPUT =====")
-    print(raw_text)
-    print("============================\n")
+    # 🔥 Removed RAW model print (huge speed boost)
 
     boxes = extract_json(raw_text)
 
     pixel_boxes = []
     for b in boxes:
         if isinstance(b, dict) and is_valid_box(b):
+
             b["x_min"] = clamp(b["x_min"])
             b["y_min"] = clamp(b["y_min"])
             b["x_max"] = clamp(b["x_max"])
@@ -154,14 +159,13 @@ def llava_detect(image_path):
                 normalized_to_pixel_bbox(b, w, h)
             )
 
-    pixel_boxes = deduplicate_boxes(pixel_boxes)
+    # Slightly lighter dedup
+    pixel_boxes = deduplicate_boxes(pixel_boxes, tol=5)
 
     return {
         "image": image_path,
         "detections": pixel_boxes
     }
-
-
 # =========================
 # Local test
 # =========================
