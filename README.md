@@ -1,31 +1,33 @@
+# 🎥 Video Threat Detection System
+
+AI-Powered Surveillance Analytics Pipeline using Vision-Language Model (LLaVA-7B via Ollama)
 
 ---
-
-# Video Threat Detection System
 
 ## 📌 Project Overview
 
 This project implements a **phase-wise AI-powered video threat detection pipeline**.
+
 The system processes a video input and progressively performs:
 
-1. Person detection
-2. Identity tracking
-3. Motion & direction analysis
-4. Relationship analysis
-5. Rule-based threat detection
+1. Person Detection
+2. Identity Tracking
+3. Motion & Direction Analysis
+4. Relationship Analysis
+5. Rule-Based Threat Detection
 
-All outputs are generated in a **structured JSON format**, making the system suitable for further analytics, visualization, or real-time extensions.
+All outputs are generated in a **structured JSON format**, making the system suitable for analytics, visualization, API integration, and real-time extensions.
 
 ---
 
-## 🧩 Pipeline Summary
+## 🧩 Pipeline Architecture
 
 ```
 Video
   ↓
 Frame Extraction
   ↓
-Person Detection
+Person Detection (VLM - LLaVA 7B)
   ↓
 Object Tracking (Track IDs)
   ↓
@@ -42,16 +44,16 @@ JSON Output
 
 ## 📅 Development Timeline
 
-* **Assignment received:** 15 December 2025
-* **Phase 1 completed:** 18 December 2025
-* **Phase 2 completed:** 26 December 2025
-* **Phase 3 completed:** 13 January 2026
-* **Phase 4 completed:** 21 January 2026
-* **Phase 5 completed:** 25 January 2026
+* Assignment Received: 15 December 2025
+* Phase 1 Completed: 18 December 2025
+* Phase 2 Completed: 26 December 2025
+* Phase 3 Completed: 13 January 2026
+* Phase 4 Completed: 21 January 2026
+* Phase 5 Completed: 25 January 2026
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
 ```
 video-threat-detection/
@@ -87,79 +89,147 @@ video-threat-detection/
 │
 ├── README.md
 └── main.py
+
 ```
 
 ---
 
-## ✅ Phase 1 – Environment Setup & Detection Foundation
+# ✅ Implementation Status
 
-**Status: Completed**
+✔ Phase 1 – Environment Setup & Detection Foundation
+✔ Phase 2 – Person Detection & Tracking
+✔ Phase 3 – Motion & Direction Analysis
+✔ Phase 4 – Relationship Analysis
+✔ Phase 5 – Threat Detection Engine
 
-* Python virtual environment setup
-* Dependencies installed and verified
-* Video frame extraction implemented using OpenCV
-* Vision-Language Model (VLM) interface integrated
-* Detection pipeline skeleton finalized
+The system is **fully end-to-end functional**.
 
----
 
-## ✅ Phase 2 – Person Detection & Object Tracking
+# ⚙️ Setup Instructions
 
-**Status: Completed**
+## 1️⃣ Prerequisites
 
-* Person-only detection filtering implemented
-* IoU-based `SimpleTracker` developed
-* Persistent `track_id` assigned across frames
-* Stable detection + tracking JSON output generated
+* Python 3.10+
+* Git
+* Ollama installed
 
 ---
 
-## ✅ Phase 3 – Motion & Direction Analysis
+## 2️⃣ Clone the Repository
 
-**Status: Completed**
-
-* `DirectionTracker` implemented
-* Frame-to-frame displacement calculation
-* Speed estimation using pixel motion
-* Direction inference (`N, S, E, W, STATIONARY`)
-* Motion data attached to each tracked person
+```bash
+git clone <repo_url>
+cd video-threat-detection
+```
 
 ---
 
-## ✅ Phase 4 – Relationship Analysis
+## 3️⃣ Create Virtual Environment
 
-**Status: Completed**
+### macOS / Linux
 
-* Proximity-based relationship analyzer implemented
-* Detects spatial relationships between tracked persons
-* Relationship data stored alongside detections
-* Designed for crowd & interaction analysis
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
----
+### Windows
 
-## ✅ Phase 5 – Threat Detection
-
-**Status: Completed**
-
-* Rule-based `ThreatDetector` implemented
-* Uses motion + tracking data for reasoning
-* Example threat detected:
-
-  * **RUNNING person based on speed threshold**
-* Threat metadata includes:
-
-  * `threat_type`
-  * `severity`
-  * `description`
-  * `involved_ids`
-  * `frame`
-  * `timestamp`
-
-Threats are stored directly in the output JSON.
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
 
 ---
 
-## 📄 Sample Output (Simplified)
+## 4️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Ensure Torch, torchvision, and torchaudio versions match as defined.
+
+---
+
+## 5️⃣ Install & Setup Ollama
+
+Download Ollama:
+
+https://ollama.ai/download
+
+Verify installation:
+
+```bash
+ollama --version
+```
+
+Pull required model:
+
+```bash
+ollama pull llava:7b
+```
+
+Verify model installation:
+
+```bash
+ollama list
+```
+
+Make sure `llava:7b` appears in the list.
+
+---
+
+# ▶️ Run the Detection Pipeline
+
+Before running, clear old generated data to avoid stale results.
+
+## 🧹 Step 1 – Clean Previous Output
+
+### macOS / Linux
+
+```
+rm -rf DATA/frames/*
+rm -f DATA/output_detections.json
+```
+
+## Windows (PowerShell)
+```
+Remove-Item DATA\frames\* -Force
+Remove-Item DATA\output_detections.json -Force
+```
+
+## 🚀 Step 2 – Run the Pipeline
+
+## Option 1 (Recommended)
+
+```bash
+python main.py
+```
+
+## Option 2 (Direct Module Execution)
+
+```bash
+python src/detection/run_video_detection.py
+```
+
+
+---
+
+# 📂 Output
+
+After successful execution:
+
+* Frames extracted to `DATA/frames/`
+* Final results saved in:
+
+```
+DATA/output_detections.json
+```
+
+---
+
+# 📄 Sample Output (Simplified)
 
 ```json
 {
@@ -184,63 +254,42 @@ Threats are stored directly in the output JSON.
 }
 ```
 
----
-
-## 🧪 Testing
-
-* Unit tests written using `pytest`
-* Covered modules:
-
-  * Person detection cleanup
-  * Direction tracking
-  * Threat detection logic
-* All tests passing successfully
+Always clean previous frames before running a new video to ensure consistent results.
 
 ---
 
-## 🚀 Current Status
+# 🧪 Testing
 
-✔ Phase 1 – Completed
-✔ Phase 2 – Completed
-✔ Phase 3 – Completed
-✔ Phase 4 – Completed
-✔ Phase 5 – Completed
+Run unit tests:
 
-The system is now **end-to-end functional** and ready for extension.
----
-## ⚙️ Setup Instructions
+```bash
+pytest
+```
 
-~~~
-git clone <repo_url>
-cd video-threat-detection
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-~~~
+Covered Modules:
 
-Run Detection Pipeline
+* Person detection filtering
+* Direction tracking
+* Threat detection logic
 
-~~~
-python src/detection/run_video_detection.py
-~~~
-
+All tests passing.
 
 ---
 
-## 🔮 Future Scope
+# 🔮 Future Enhancements
 
 * Zone-based threat detection
 * Crowd density analysis
 * Trajectory prediction
-* Real-time video stream integration
-* Alerting & visualization dashboards
+* Real-time video stream processing
+* REST API & dashboard integration
 
 ---
 
-## 🧠 Final Note
+# 🧠 Final Note
 
-This project demonstrates a **clean, modular, phase-wise approach** to building an intelligent video threat detection system.
-The architecture is scalable, testable, and ready for real-world extensions.
+This project demonstrates a **clean, modular, and scalable architecture** for intelligent video threat detection.
 
----
+The system is fully functional, testable, and production-extensible.
+
 
