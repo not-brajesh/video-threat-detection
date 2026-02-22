@@ -118,7 +118,8 @@ The system is **fully end-to-end functional**.
 ## 2️⃣ Clone the Repository
 
 ```bash
-git clone <repo_url>
+git clone https://github.com/not-brajesh/video-threat-detection.git
+
 cd video-threat-detection
 ```
 
